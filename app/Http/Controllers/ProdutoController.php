@@ -13,7 +13,8 @@ class ProdutoController extends Controller
      */
     public function index( Request $request)   {
 
-        $produtos = Produto::simplePaginate(5);
+        $produtos = Produto::with(['Fornecedor'])->paginate(5);
+
 
         return view("app.produto.index", ['produtos' => $produtos, 'request' => $request->all()]);
     }

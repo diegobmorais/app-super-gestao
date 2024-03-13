@@ -23,6 +23,7 @@
                         <tr>
                             <th>Nome</th>
                             <th>Descrição</th>
+                            <th>Fornecedor</th>
                             <th>Peso</th>
                             <th>Unidade ID</th>
                             <th></th>
@@ -34,6 +35,7 @@
                             <tr>
                                 <th>{{ $produto->nome }}</th>
                                 <th>{{ $produto->descricao }}</th>
+                                <th>{{ $produto->fornecedor ? $produto->fornecedor->nome : 'N/A' }}</th>
                                 <th>{{ $produto->peso }}</th>
                                 <th>{{ $produto->unidade_id }}</th>
                                 <th><a href="{{ route('produto.show', ['produto' => $produto->id]) }}">Visualizar</a></th>
